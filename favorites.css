@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;    
+}
+body{
+    background: url("images/bg.jpg") no-repeat ;
+    background-size:100%;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.overlay::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.87); 
+}
+.overlay {
+   
+    position: relative;
+    color: rgba(244, 230, 213,0.85);   
+}
+#fav_section{
+    display: block;
+    position: relative;
+}
+#fav_close_btn{
+    font-size: 25px;
+    color: rgba(244, 230, 213,0.85);
+    margin-right:50px; 
+}
+
+header .navbar_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:linear-gradient( rgb(192, 84, 84) , rgb(70, 15, 15));
+    box-shadow: 10px 10px 10px rgba(10, 3, 3, 0.8);   
+}
+.navbar_content .logo_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 72px;
+    margin-left: 10px;
+}
+.navbar_content .logo_content img{
+    width: 100%; 
+    background-size: cover;
+}
+.nav_fav_heading{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 60px;
+  }
+  .nav_fav_heading h1{
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(244, 230, 213,0.8);
+  }
+
+  .nav_fav_heading h1 span{
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    color:rgba(210, 99, 99, 0.639);
+  }
+
+  .fav_main .fav_meal_main_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fav_meal_main_content #fav_meal_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fav_meal_main_content #fav_meal_list li{
+    list-style: none;
+    margin-left: 40px; 
+    margin-right: 20px; 
+}
+
+ .fav_meal_main_content .fav_meal_items{
+    display: block;
+    margin: 10px 15px 15px 20px;
+    transition: 0.6s;
+}
+.fav_meal_main_content .fav_meal_items .fav_meal_items_img {
+    display: block;
+    padding: 0;
+    margin: 0; 
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; 
+}
+.fav_meal_items_img img{
+    width: 320px;
+    height: 320px;
+    background-size: cover; 
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+   
+}
+.fav_meal_items:hover{
+    scale: 1.04;
+    cursor: pointer;
+}
+.fav_meal_items_details{
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+    padding: 0;
+    margin: -4px 0;
+    height: 48px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: linear-gradient( rgb(192, 84, 84) , rgb(70, 15, 15));
+}
+.fav_meal_items_details p{
+    white-space: nowrap;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fav_meal_items_details .fav_meal_items_name{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(244, 230, 213,0.85);
+    font-family: 'Roboto', sans-serif;
+    
+}
+.fav_meal_items_details .meal_items_btn{
+    outline: none;
+    border: none;
+    border: 1.4px solid rgba(206, 203, 203, 0.418);
+    border-radius: 15px;
+    background: transparent;
+    color: rgba(244, 230, 213,0.85);
+    width: 20%;
+    height: 68%;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0;
+    margin: 2px 0; 
+    font-family:'Roboto', sans-serif;
+}
+.fav_meal_items_details .meal_items_btn:hover{
+    background:  rgba(244, 230, 213, 0.71);
+    color: rgb(132, 32, 32);
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+ .fav_meal_items_details i{
+    font-size: 23px;
+    color: rgba(244, 230, 213,0.85);
+    z-index: 5;
+}
+.fav_meal_items_details i:hover{
+    color:rgba(234, 101, 101, 0.87);
+    scale: 1.1;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 15px;
+    right: 12px; 
+    z-index: 999; 
+  }
+  
+  #up_arrow {
+    font-size: 21px; 
+    color: rgba(132, 32, 32, 0.95);
+    background-color:rgba(244, 230, 213,0.8); 
+    border-radius: 50%; 
+    padding: 4.2px;
+  }
+
+ 
