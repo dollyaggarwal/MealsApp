@@ -18,15 +18,6 @@ body{
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-#fav_section{
-    display: block;
-    position: relative;
-}
-#fav_close_btn{
-    font-size: 25px;
-    color: rgba(244, 230, 213,0.85);
-    margin-right:50px; 
-}
 .overlay::before {
     content: "";
     position: fixed;
@@ -42,7 +33,7 @@ body{
     position: relative;
     color: rgba(244, 230, 213,0.85);   
 }
-.nav_fav_heading{
+/* .nav_fav_heading{
     display: flex;
     align-items: center;
     width: 60%;
@@ -58,7 +49,7 @@ body{
     font-size: 35px;
     font-family: 'Roboto', sans-serif;
     color:rgba(210, 99, 99, 0.639);
-  }
+  } */
 
 header .navbar_content{
     display: flex;
@@ -99,7 +90,7 @@ header .navbar_content .nav_heading h1 span{
     color:rgba(210, 99, 99, 0.639);
 }
 header .navbar_content i{
-    font-size: 25px;
+    font-size: 28px;
     color: rgba(244, 230, 213,0.85);
     margin-right:50px;   
 }
@@ -238,12 +229,12 @@ section .search_meal{
     outline: none;
     border: none;
 }
- .meal_items_details i{
-    font-size: 23px;
+ .meal_items_details #fav_icon{
+    font-size: 25px;
     color: rgba(244, 230, 213,0.85);
     z-index: 5;
 }
-.meal_items_details i:hover{
+.meal_items_details #fav_icon:hover{
     color:rgba(234, 101, 101, 0.87);
     scale: 1.1;
 }

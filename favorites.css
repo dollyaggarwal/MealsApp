@@ -34,7 +34,7 @@ body{
 }
 #fav_section{
     display: block;
-    position: relative;
+    /* position: relative; */
 }
 #fav_close_btn{
     font-size: 25px;
@@ -63,9 +63,11 @@ header .navbar_content{
 }
 .nav_fav_heading{
     display: flex;
+    /* justify-content: center; */
     align-items: center;
     width: 60%;
     height: 60px;
+    /* border: 1px solid black; */
   }
   .nav_fav_heading h1{
     font-size: 35px;
@@ -141,7 +143,7 @@ header .navbar_content{
     font-family: 'Roboto', sans-serif;
     
 }
-.fav_meal_items_details .meal_items_btn{
+.fav_meal_items_details .fav_meal_items_btn{
     outline: none;
     border: none;
     border: 1.4px solid rgba(206, 203, 203, 0.418);
@@ -156,7 +158,7 @@ header .navbar_content{
     margin: 2px 0; 
     font-family:'Roboto', sans-serif;
 }
-.fav_meal_items_details .meal_items_btn:hover{
+.fav_meal_items_details .fav_meal_items_btn:hover{
     background:  rgba(244, 230, 213, 0.71);
     color: rgb(132, 32, 32);
     cursor: pointer;
@@ -164,12 +166,11 @@ header .navbar_content{
     border: none;
 }
  .fav_meal_items_details i{
-    font-size: 23px;
+    font-size: 25px;
     color: rgba(244, 230, 213,0.85);
     z-index: 5;
 }
 .fav_meal_items_details i:hover{
-    color:rgba(234, 101, 101, 0.87);
     scale: 1.1;
 }
 
