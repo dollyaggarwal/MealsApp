@@ -1,47 +1,46 @@
-import{fetchMealDetails, updateFavPageIconColor} from './main.js';
+import { fetchMealDetails, updateFavPageIconColor } from "./main.js";
 // import{updateFavPageIconColor} from './main.js';
 
 // Function to add a meal to favorites
 
 export const addToFavorites = (meal) => {
   // Check if the meal is already in favorites
-  
+
   const existingFavorites = getFavoritesFromLocalStorage();
-  const isAlreadyFavorite = existingFavorites.some((fav) => fav.idMeal === meal.idMeal);
-    
+  const isAlreadyFavorite = existingFavorites.some(
+    (fav) => fav.idMeal === meal.idMeal
+  );
+
   if (!isAlreadyFavorite) {
-    
     existingFavorites.push(meal);
     saveFavoritesToLocalStorage(existingFavorites);
 
     displayFavorites();
-  }
-  else {
-   
+  } else {
     removeFromFavorites(meal.idMeal);
     displayFavorites();
   }
   updateFavPageIconColor();
-  
 };
 
 // Function to remove a meal from favorites
 
 export const removeFromFavorites = (mealId) => {
   const existingFavorites = getFavoritesFromLocalStorage();
-  const updatedFavorites = existingFavorites.filter((fav) => fav.idMeal !== mealId);
+  const updatedFavorites = existingFavorites.filter(
+    (fav) => fav.idMeal !== mealId
+  );
   saveFavoritesToLocalStorage(updatedFavorites);
   displayFavorites();
   updateFavPageIconColor();
 };
 
-// Function to get favorites from local 
+// Function to get favorites from local
 
 export const getFavoritesFromLocalStorage = () => {
   const favoritesJSON = localStorage.getItem("favorites");
- 
-  return JSON.parse(favoritesJSON) || [];
 
+  return JSON.parse(favoritesJSON) || [];
 };
 
 // Function to save favorites to local storage
@@ -54,17 +53,14 @@ export const saveFavoritesToLocalStorage = (favorites) => {
 // Function to display favorites on favorites.html
 
 export const displayFavorites = () => {
-
   const favoritesList = document.querySelector("#fav_meal_list");
- 
-  
-  favoritesList.innerHTML = ''; // Clear previous favorites
+
+  favoritesList.innerHTML = ""; // Clear previous favorites
 
   const favorites = getFavoritesFromLocalStorage();
 
-    
   favorites.forEach((meal) => {
-    const listItem = document.createElement('li');
+    const listItem = document.createElement("li");
     const trimmedMealName = meal.strMeal.slice(0, 22);
     listItem.innerHTML = `
       <div class="fav_meal_items">
@@ -79,9 +75,11 @@ export const displayFavorites = () => {
       </div>
     `;
 
-    listItem.querySelector(".fav_meal_items_btn").addEventListener("click", function () {
-      fetchMealDetails(meal);
-    });
+    listItem
+      .querySelector(".fav_meal_items_btn")
+      .addEventListener("click", function () {
+        fetchMealDetails(meal);
+      });
 
     const favIcon = listItem.querySelector("#fav_icon");
     if (isInFavorites(meal)) {
@@ -91,7 +89,7 @@ export const displayFavorites = () => {
       // favIcon.classList.remove("favorite");
       favIcon.style.color = " rgba(244, 230, 213,0.85)";
     }
-    
+
     favIcon.addEventListener("click", function () {
       toggleFavorite(meal);
       displayFavorites();
@@ -100,8 +98,6 @@ export const displayFavorites = () => {
     favoritesList.appendChild(listItem);
   });
 };
-
-
 
 // Check if a meal is in the favorites list
 export const isInFavorites = (meal) => {
@@ -118,4 +114,4 @@ export const toggleFavorite = (meal) => {
   }
 };
 
-document.addEventListener("DOMContentLoaded",displayFavorites);
+document.addEventListener("DOMContentLoaded", displayFavorites);

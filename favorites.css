@@ -36,7 +36,7 @@ body{
 header .navbar_content{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background:linear-gradient( rgb(192, 84, 84) , rgb(70, 15, 15));
     box-shadow: 10px 10px 10px rgba(10, 3, 3, 0.8);   
 }
@@ -75,8 +75,7 @@ header .navbar_content{
  .fav_meal_main_content{
     display: flex;
     align-items: center;
-    justify-content: center;
-   
+    justify-content: center; 
 }
 .fav_meal_main_content #fav_meal_list{
     display: flex;
@@ -180,5 +179,31 @@ header .navbar_content{
     border-radius: 50%; 
     padding: 4.2px;
   }
+
+  @media (max-width: 768px) {
+
+    .fav_meal_main_content #fav_meal_list li{
+        margin: auto;
+    }
+    .fav_meal_items_img img{
+        width: 320px;
+        height: 320px;  
+    }
+  }
+
+  @media (max-width: 480px) {
+    
+    .nav_fav_heading h1{
+        font-size: 30px;
+      }
+    .fav_meal_main_content #fav_meal_list li{
+        margin: auto;
+    }
+    .fav_meal_items_img img{
+        width: 300px;
+        height: 300px;
+    }
+  }
+  
 
  

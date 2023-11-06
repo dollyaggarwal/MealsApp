@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="favorites.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="details.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="favorites.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="details.css" />
     <title>Meals App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="overlay">
-        <header>
-            <nav class="navbar">
-                <div class="navbar_content">
-                    <div class="logo_content">                 
-                        <img src="images/logo.png"  alt="Meals App">
-                    </div> 
-                    <div class="nav_fav_heading">
-                        <h1>My<span> WishList </span></h1>    
-                    </div> 
-                       
+      <header>
+        <nav class="navbar">
+          <div class="navbar_content">
+            <div class="logo_content">
+              <img src="images/logo.png" alt="Meals App" />
+            </div>
+            <div class="nav_fav_heading">
+              <h1>My<span> WishList </span></h1>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section>
+        <div class="fav_meal_main_content">
+          <ul id="fav_meal_list">
+            <li>
+              <div class="fav_meal_items">
+                <div class="fav_meal_items_img">
+                  <img src="images/pizza.jpg" alt="pizza" />
                 </div>
-            </nav>
-        </header>
-        
-        <section>
-                
-                <div class="fav_meal_main_content"> 
-                    <ul id="fav_meal_list"> 
-                <li>
-                    <div class="fav_meal_items">
-                        
-                        <div class="fav_meal_items_img">
-                            <img src="images/pizza.jpg" alt="pizza">
-                        </div>
-                        
-                        <div class="fav_meal_items_details">
-                            <p><span class="fav_meal_items_name">pizza</span></p>
-                            <button class="fav_meal_items_btn">More</button> 
-                            <i id="fav_icon" class="fas fa-heart "></i>
-                        </div>
-                    </div>
-                </li>
-                </ul>
+
+                <div class="fav_meal_items_details">
+                  <p><span class="fav_meal_items_name">pizza</span></p>
+                  <button class="fav_meal_items_btn">More</button>
+                  <i id="fav_icon" class="fas fa-heart"></i>
                 </div>
-            
-            </section>
-          
-            <div class="card">
-                <!-- <div class="meal_items_details_img">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="card">
+        <!-- <div class="meal_items_details_img">
           <img src="images/cake.jpg">
 
           </div>
@@ -66,11 +67,13 @@
 </div> 
 <i class="fas fa-close" id="close_btn"></i>
 -->
-</div>          
+      </div>
     </div>
-    <a href="#" id="scrollToTop"><i id="up_arrow" class="fas fa-arrow-alt-circle-up"></i></a>
+    <a href="#" id="scrollToTop"
+      ><i id="up_arrow" class="fas fa-arrow-alt-circle-up"></i
+    ></a>
 
     <script type="module" src="main.js"></script>
     <script type="module" src="favorites.js"></script>
-</body>
+  </body>
 </html>
