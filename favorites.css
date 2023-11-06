@@ -32,15 +32,6 @@ body{
     position: relative;
     color: rgba(244, 230, 213,0.85);   
 }
-#fav_section{
-    display: block;
-    /* position: relative; */
-}
-#fav_close_btn{
-    font-size: 25px;
-    color: rgba(244, 230, 213,0.85);
-    margin-right:50px; 
-}
 
 header .navbar_content{
     display: flex;
@@ -81,10 +72,11 @@ header .navbar_content{
     color:rgba(210, 99, 99, 0.639);
   }
 
-  .fav_main .fav_meal_main_content{
+ .fav_meal_main_content{
     display: flex;
     align-items: center;
     justify-content: center;
+   
 }
 .fav_meal_main_content #fav_meal_list{
     display: flex;

@@ -15,16 +15,17 @@ export const addToFavorites = (meal) => {
 
     displayFavorites();
   }
-  else{
+  else {
    
     removeFromFavorites(meal.idMeal);
     displayFavorites();
   }
+  
 };
 
 // Function to remove a meal from favorites
 
-const removeFromFavorites = (mealId) => {
+export const removeFromFavorites = (mealId) => {
   const existingFavorites = getFavoritesFromLocalStorage();
   const updatedFavorites = existingFavorites.filter((fav) => fav.idMeal !== mealId);
   saveFavoritesToLocalStorage(updatedFavorites);
@@ -42,13 +43,13 @@ export const getFavoritesFromLocalStorage = () => {
 
 // Function to save favorites to local storage
 
-const saveFavoritesToLocalStorage = (favorites) => {
+export const saveFavoritesToLocalStorage = (favorites) => {
   const favoritesJSON = JSON.stringify(favorites);
   localStorage.setItem("favorites", favoritesJSON);
 };
 
 // Function to display favorites on favorites.html
-const displayFavorites = () => {
+export const displayFavorites = () => {
 
   const favoritesList = document.querySelector("#fav_meal_list");
  
@@ -60,14 +61,14 @@ const displayFavorites = () => {
     
   favorites.forEach((meal) => {
     const listItem = document.createElement('li');
-  
+    const trimmedMealName = meal.strMeal.slice(0, 22);
     listItem.innerHTML = `
       <div class="fav_meal_items">
         <div class="fav_meal_items_img">
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
         </div>
         <div class="fav_meal_items_details">
-          <p><span class="fav_meal_items_name">${meal.strMeal}</span></p>
+          <p><span class="fav_meal_items_name">${trimmedMealName}</span></p>
           <button class="fav_meal_items_btn">More</button>
           <i id="fav_icon" class="fas fa-heart "></i>
         </div>
@@ -84,7 +85,7 @@ const displayFavorites = () => {
       favIcon.style.color = "rgba(210, 99, 99, 0.85)";
     } else {
       favIcon.classList.remove("favorite");
-      favIcon.style.color = "white";
+      favIcon.style.color = " rgba(244, 230, 213,0.85)";
     }
     
     favIcon.addEventListener("click", function () {
@@ -95,19 +96,22 @@ const displayFavorites = () => {
     favoritesList.appendChild(listItem);
   });
 };
-document.addEventListener("DOMContentLoaded",displayFavorites);
+
+
 
 // Check if a meal is in the favorites list
-const isInFavorites = (meal) => {
+export const isInFavorites = (meal) => {
   const favorites = getFavoritesFromLocalStorage();
   return favorites.some((fav) => fav.idMeal === meal.idMeal);
 };
 
 // Toggle favorite status for a meal
-const toggleFavorite = (meal) => {
+export const toggleFavorite = (meal) => {
   if (isInFavorites(meal)) {
     removeFromFavorites(meal.idMeal);
   } else {
     addToFavorites(meal);
   }
 };
+
+document.addEventListener("DOMContentLoaded",displayFavorites);

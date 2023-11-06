@@ -235,7 +235,7 @@ section .search_meal{
     z-index: 5;
 }
 .meal_items_details #fav_icon:hover{
-    color:rgba(234, 101, 101, 0.87);
+    color:rgba(234, 101, 101, 0.7);
     scale: 1.1;
 }
 
