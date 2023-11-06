@@ -33,24 +33,6 @@ body{
     position: relative;
     color: rgba(244, 230, 213,0.85);   
 }
-/* .nav_fav_heading{
-    display: flex;
-    align-items: center;
-    width: 60%;
-    height: 60px;
-  }
-  .nav_fav_heading h1{
-    font-size: 35px;
-    font-family: 'Roboto', sans-serif;
-    color: rgba(244, 230, 213,0.8);
-  }
-
-  .nav_fav_heading h1 span{
-    font-size: 35px;
-    font-family: 'Roboto', sans-serif;
-    color:rgba(210, 99, 99, 0.639);
-  } */
-
 header .navbar_content{
     display: flex;
     align-items: center;
@@ -89,15 +71,40 @@ header .navbar_content .nav_heading h1 span{
     font-family: 'Roboto', sans-serif;
     color:rgba(210, 99, 99, 0.639);
 }
-header .navbar_content i{
+ .navbar_content i{
     font-size: 28px;
     color: rgba(244, 230, 213,0.85);
-    margin-right:50px;   
+    margin-right:40px;
+    z-index: 9999; 
+      
 }
-header .navbar_content i:hover{
-    color:rgba(234, 101, 101, 0.87);
+.navbar_content i:hover{
     scale: 1.1;
+    cursor: pointer;
 }
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100vw;
+    height: 7vh;
+    background:none;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+  
+  .custom-alert span{
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 3px;
+    color:  rgb(244, 230, 213);
+  }
+
 
 section .search_meal{
     display: flex;
@@ -232,10 +239,9 @@ section .search_meal{
  .meal_items_details #fav_icon{
     font-size: 25px;
     color: rgba(244, 230, 213,0.85);
-    z-index: 5;
+    z-index: 100;
 }
 .meal_items_details #fav_icon:hover{
-    color:rgba(234, 101, 101, 0.7);
     scale: 1.1;
 }
 

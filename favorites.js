@@ -1,4 +1,5 @@
-import{fetchMealDetails} from './main.js';
+import{fetchMealDetails, updateFavPageIconColor} from './main.js';
+// import{updateFavPageIconColor} from './main.js';
 
 // Function to add a meal to favorites
 
@@ -20,6 +21,7 @@ export const addToFavorites = (meal) => {
     removeFromFavorites(meal.idMeal);
     displayFavorites();
   }
+  updateFavPageIconColor();
   
 };
 
@@ -30,6 +32,7 @@ export const removeFromFavorites = (mealId) => {
   const updatedFavorites = existingFavorites.filter((fav) => fav.idMeal !== mealId);
   saveFavoritesToLocalStorage(updatedFavorites);
   displayFavorites();
+  updateFavPageIconColor();
 };
 
 // Function to get favorites from local 
@@ -49,6 +52,7 @@ export const saveFavoritesToLocalStorage = (favorites) => {
 };
 
 // Function to display favorites on favorites.html
+
 export const displayFavorites = () => {
 
   const favoritesList = document.querySelector("#fav_meal_list");
@@ -81,10 +85,10 @@ export const displayFavorites = () => {
 
     const favIcon = listItem.querySelector("#fav_icon");
     if (isInFavorites(meal)) {
-      favIcon.classList.add("favorite");
+      // favIcon.classList.add("favorite");
       favIcon.style.color = "rgba(210, 99, 99, 0.85)";
     } else {
-      favIcon.classList.remove("favorite");
+      // favIcon.classList.remove("favorite");
       favIcon.style.color = " rgba(244, 230, 213,0.85)";
     }
     

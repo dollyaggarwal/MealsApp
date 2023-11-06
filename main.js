@@ -1,6 +1,6 @@
 import { addToFavorites , removeFromFavorites ,  getFavoritesFromLocalStorage } from './favorites.js';
 
- import { displayFavorites, saveFavoritesToLocalStorage , isInFavorites} from './favorites.js';
+ import { displayFavorites, isInFavorites} from './favorites.js';
 
  const searchMealInput = document.getElementById("search_meal_input");
  const submitMealButton = document.getElementById("submit_meal_input");
@@ -54,10 +54,10 @@ const displayMealItem = (meal) => {
 
   const favIcon = listItem.querySelector("#fav_icon");
   if (isInFavorites(meal)) {
-    favIcon.classList.add("favorite");
+    //favIcon.classList.add("favorite");
     favIcon.style.color = "rgba(210, 99, 99, 0.85)";
   } else {
-    favIcon.classList.remove("favorite");
+    // favIcon.classList.remove("favorite");
     favIcon.style.color = " rgba(244, 230, 213,0.85)";
   }
   
@@ -68,16 +68,7 @@ const displayMealItem = (meal) => {
 
   mealList.appendChild(listItem);
   };
-  // Toggle favorite status for a meal
- const toggleFavorite = (meal, favIcon) => {
-  if (isInFavorites(meal)) {
-    favIcon.style.color = " rgba(244, 230, 213,0.85)";
-    removeFromFavorites(meal.idMeal);
-  } else {
-    favIcon.style.color = "rgba(210, 99, 99, 0.85)";
-    addToFavorites(meal);
-  }
-};
+
 
 // Define a function to fetch meals by search query
 const fetchMealsBySearch = async (searchText) => {
@@ -100,9 +91,6 @@ const fetchMealsBySearch = async (searchText) => {
     console.error('Fetch error:', error);
   }
 };
-
-
-
 
 export const fetchMealDetails = (meal) => {
   body.style.pointerEvents = 'none';
@@ -158,6 +146,58 @@ const fetchMealVideo = async (meal) => {
 };
 window.addEventListener("load", fetchRandomMeals);
 
+  // Toggle favorite status for a meal
+  const toggleFavorite = (meal, favIcon) => {
+    if (isInFavorites(meal)) {
+      favIcon.style.color = " rgba(244, 230, 213,0.85)";
+      showCustomAlert("Removed From WishList...",1000);
+      removeFromFavorites(meal.idMeal);
+    } else {
+      favIcon.style.color = "rgba(210, 99, 99, 0.85)";
+      showCustomAlert("Added To WishList...",1000);
+      addToFavorites(meal);
+    }
+  };
+  function showCustomAlert(message, duration) {
+    const customAlert = document.getElementById("customAlert");
+    const alertMessage = document.getElementById("alertMessage");
+  
+  
+    alertMessage.innerText = message;
+    customAlert.style.display = "flex";
+    customAlert.style.zIndex =999;
+    setTimeout(function() {
+      customAlert.style.display = "none";
+      customAlert.style.zIndex = 0;
+    }, duration);
+  }
+  // Function to update the icon color based on the favorite list status
+export const updateFavPageIconColor = () => {
+  const favPageIcon = document.querySelector("#fav_page");
+
+  // Check if the favorite list is empty
+  if (getFavoritesFromLocalStorage().length > 0) {
+    console.log(getFavoritesFromLocalStorage.length)
+   
+    favPageIcon.style.color = "rgba(210, 99, 99, 0.85)";
+  } else {
+    
+    favPageIcon.style.color = "rgba(244, 230, 213,0.85)";
+  }
+};
+
+// Call the function to initially set the icon color
+updateFavPageIconColor();
+
+const loadFavPage=document.querySelector("#fav_page");
+
+loadFavPage.addEventListener("click", function () {
+  console.log("Clicked on fav_page icon");
+  var newPageUrl = "favorites.html";
+  window.location.href = newPageUrl;
+ 
+});
+
 
 // Add an event listener to the search form
 submitMealButton.addEventListener('click', function (event) {
@@ -166,11 +206,6 @@ submitMealButton.addEventListener('click', function (event) {
   fetchMealsBySearch(searchText);
 });
 
-const loadFavPage=document.getElementById("fav_page");
-loadFavPage.addEventListener("click", function () {
-  var newPageUrl = "favorites.html";
-  window.location.href = newPageUrl;
- 
-});
+
 
 

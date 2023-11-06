@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
      crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="favorites.css">
+    <!-- <link rel="stylesheet" href="favorites.css"> -->
     <link rel="stylesheet" href="details.css">
     <title>Meals App</title>
 </head>
 <body>
     
     <div class="overlay">
+          
     <header>
         <nav class="navbar">
             <div class="navbar_content">
@@ -28,10 +29,15 @@
             </div>
         </nav>
     </header>
-
+    <div id="customAlert" class="custom-alert">
+        <span id="alertMessage">favorite alertMessage</span>
+      </div>
+    
         <section>
+            
+               
             <div class="main">
-
+               
                 <div class="search_meal">
                     <form>
                         <input type="search" class="search_meal_input_search" id="search_meal_input" placeholder="Search your favorite meal here...">
