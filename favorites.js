@@ -83,10 +83,10 @@ export const displayFavorites = () => {
 
     const favIcon = listItem.querySelector("#fav_icon");
     if (isInFavorites(meal)) {
-      // favIcon.classList.add("favorite");
+    
       favIcon.style.color = "rgba(210, 99, 99, 0.85)";
     } else {
-      // favIcon.classList.remove("favorite");
+     
       favIcon.style.color = " rgba(244, 230, 213,0.85)";
     }
 
@@ -113,5 +113,6 @@ export const toggleFavorite = (meal) => {
     addToFavorites(meal);
   }
 };
+
 
 document.addEventListener("DOMContentLoaded", displayFavorites);

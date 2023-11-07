@@ -1,10 +1,14 @@
+//importing functions from favorites.js
 import {
   addToFavorites,
   removeFromFavorites,
   getFavoritesFromLocalStorage,
 } from "./favorites.js";
+import { 
+  displayFavorites, 
+  isInFavorites 
+} from "./favorites.js";
 
-import { displayFavorites, isInFavorites } from "./favorites.js";
 
 const searchMealInput = document.getElementById("search_meal_input");
 const submitMealButton = document.getElementById("submit_meal_input");
@@ -13,6 +17,7 @@ const detailsCard = document.querySelector(".card");
 const body = document.body;
 
 // Define a function to fetch random meals when the page loads
+
 const fetchRandomMeals = async () => {
   const apiUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
@@ -34,7 +39,8 @@ const fetchRandomMeals = async () => {
   }
 };
 
-// Function to display a single meal item
+// Function to display meal items
+
 const displayMealItem = (meal) => {
   const listItem = document.createElement("li");
   const trimmedMealName = meal.strMeal.slice(0, 22);
@@ -51,7 +57,6 @@ const displayMealItem = (meal) => {
       </div>
     </div>
   `;
-
   listItem
     .querySelector(".meal_items_btn")
     .addEventListener("click", function () {
@@ -97,6 +102,7 @@ const fetchMealsBySearch = async (searchText) => {
   }
 };
 
+//fetch meal details on a popup card
 export const fetchMealDetails = (meal) => {
   body.style.pointerEvents = "none";
   detailsCard.style.pointerEvents = "auto";
@@ -119,8 +125,8 @@ export const fetchMealDetails = (meal) => {
     <i class="fas fa-close" id="close_btn"></i>
   `;
 
+  //play video on clicking video button
   cardItem.querySelector("#video_btn").addEventListener("click", () => {
-    console.log(meal.strYoutube);
     fetchMealVideo(meal);
   });
 
@@ -133,6 +139,7 @@ export const fetchMealDetails = (meal) => {
   });
 };
 
+//fetch video url from api
 const fetchMealVideo = async (meal) => {
   try {
     const videoUrl = `${meal.strYoutube}`;
@@ -146,7 +153,7 @@ const fetchMealVideo = async (meal) => {
   }
 };
 
-window.addEventListener("load", fetchRandomMeals);
+  window.addEventListener("load", fetchRandomMeals);
 
 // Toggle favorite status for a meal
 const toggleFavorite = (meal, favIcon) => {
@@ -189,11 +196,10 @@ export const updateFavPageIconColor = () => {
 
 // Call the function to initially set the icon color
 
-document.addEventListener("DOMContentLoaded",updateFavPageIconColor);
+window.addEventListener("load",updateFavPageIconColor);
 
-
+//load favorites.html page on clicking fav_page icon
 const loadFavPage = document.querySelector("#fav_page");
-
 loadFavPage.addEventListener("click", function () {
   console.log("Clicked on fav_page icon");
   var newPageUrl = "favorites.html";
