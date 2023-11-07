@@ -190,11 +190,7 @@ export const updateFavPageIconColor = () => {
 // Call the function to initially set the icon color
 
 document.addEventListener("DOMContentLoaded",updateFavPageIconColor);
-if (!sessionStorage.getItem("reloaded")) {
-  // If not, reload the page and set a flag in sessionStorage
-  window.location.reload();
-  sessionStorage.setItem("reloaded", "true");
-}
+
 
 const loadFavPage = document.querySelector("#fav_page");
 
@@ -211,5 +207,5 @@ submitMealButton.addEventListener("click", function (event) {
   fetchMealsBySearch(searchText);
 });
 
-// window.location.reload();
+
 
