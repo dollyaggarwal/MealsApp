@@ -180,13 +180,21 @@ export const updateFavPageIconColor = () => {
   if (getFavoritesFromLocalStorage().length > 0) {
     
     favPageIcon.style.color = "rgba(210, 99, 99, 0.85)";
+   
   } else {
     favPageIcon.style.color = "rgba(244, 230, 213,0.85)";
+   
   }
 };
 
 // Call the function to initially set the icon color
-(updateFavPageIconColor);
+
+document.addEventListener("DOMContentLoaded",updateFavPageIconColor);
+if (!sessionStorage.getItem("reloaded")) {
+  // If not, reload the page and set a flag in sessionStorage
+  window.location.reload();
+  sessionStorage.setItem("reloaded", "true");
+}
 
 const loadFavPage = document.querySelector("#fav_page");
 
@@ -203,5 +211,5 @@ submitMealButton.addEventListener("click", function (event) {
   fetchMealsBySearch(searchText);
 });
 
-window.location.reload(true);
+// window.location.reload();
 
