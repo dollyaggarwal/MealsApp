@@ -1,4 +1,5 @@
 //importing functions from favorites.js
+
 import {
   addToFavorites,
   removeFromFavorites,

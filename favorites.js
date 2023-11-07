@@ -1,9 +1,11 @@
+//imported functions from main.js file
+
 import { fetchMealDetails, updateFavPageIconColor } from "./main.js";
-// import{updateFavPageIconColor} from './main.js';
 
 // Function to add a meal to favorites
 
 export const addToFavorites = (meal) => {
+
   // Check if the meal is already in favorites
 
   const existingFavorites = getFavoritesFromLocalStorage();
@@ -57,7 +59,7 @@ export const displayFavorites = () => {
 
   favoritesList.innerHTML = ""; // Clear previous favorites
 
-  const favorites = getFavoritesFromLocalStorage();
+  const favorites = getFavoritesFromLocalStorage(); //fetch favorites from local storage
 
   favorites.forEach((meal) => {
     const listItem = document.createElement("li");
@@ -74,12 +76,12 @@ export const displayFavorites = () => {
         </div>
       </div>
     `;
-
     listItem
       .querySelector(".fav_meal_items_btn")
       .addEventListener("click", function () {
         fetchMealDetails(meal);
       });
+
 
     const favIcon = listItem.querySelector("#fav_icon");
     if (isInFavorites(meal)) {
@@ -90,6 +92,8 @@ export const displayFavorites = () => {
       favIcon.style.color = " rgba(244, 230, 213,0.85)";
     }
 
+      //toggle between color of favorite items on clicking on fav icon
+
     favIcon.addEventListener("click", function () {
       toggleFavorite(meal);
       displayFavorites();
@@ -99,13 +103,15 @@ export const displayFavorites = () => {
   });
 };
 
-// Check if a meal is in the favorites list
+//Check if a meal is in the favorites list
+
 export const isInFavorites = (meal) => {
   const favorites = getFavoritesFromLocalStorage();
   return favorites.some((fav) => fav.idMeal === meal.idMeal);
 };
 
 // Toggle favorite status for a meal
+
 export const toggleFavorite = (meal) => {
   if (isInFavorites(meal)) {
     removeFromFavorites(meal.idMeal);
@@ -113,6 +119,5 @@ export const toggleFavorite = (meal) => {
     addToFavorites(meal);
   }
 };
-
 
 document.addEventListener("DOMContentLoaded", displayFavorites);
