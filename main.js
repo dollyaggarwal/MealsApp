@@ -197,9 +197,10 @@ export  const updateFavPageIconColor = () => {
 
 // Call the function to initially set the icon color
 
-setInterval(updateFavPageIconColor,100);
+setInterval(updateFavPageIconColor,500);
 
 //load favorites.html page on clicking fav_page icon
+
 const loadFavPage = document.querySelector("#fav_page");
 loadFavPage.addEventListener("click", function () {
   console.log("Clicked on fav_page icon");
