@@ -31,6 +31,8 @@ body {
   position: relative;
   color: rgba(244, 230, 213, 0.85);
 }
+
+/* navbar section styles */
 header .navbar_content {
   display: flex;
   align-items: center;
@@ -79,6 +81,7 @@ header .navbar_content .nav_heading h1 span {
   scale: 1.1;
   cursor: pointer;
 }
+/* fav items alert message styles */
 .custom-alert {
   display: none;
   position: fixed;
@@ -102,6 +105,7 @@ header .navbar_content .nav_heading h1 span {
   color: rgb(244, 230, 213);
 }
 
+/* search section styles */
 section .search_meal {
   display: flex;
   justify-content: center;
@@ -148,6 +152,8 @@ section .search_meal {
   color: rgba(244, 230, 213, 0.8);
   box-shadow: 0.5px 0.5px 3px rgba(129, 57, 57, 0.5);
 }
+
+/* main meal section styles */
 .main .meal_main_content  {
   display: flex;
   align-items: center;
@@ -160,7 +166,7 @@ section .search_meal {
 }
 .meal_main_content #meal_list li {
   list-style: none;
-  margin-left: 40px;
+  margin-left: 35px;
   margin-right: 20px;
 }
 
@@ -240,6 +246,7 @@ section .search_meal {
   scale: 1.1;
 }
 
+/* scroll up arrow styles */
 #scrollToTop {
   position: fixed;
   bottom: 15px;
@@ -255,6 +262,7 @@ section .search_meal {
   padding: 4.2px;
 }
 
+/* media queries for responsivity */
 
 @media (max-width: 768px) {
   .meal_main_content ul {

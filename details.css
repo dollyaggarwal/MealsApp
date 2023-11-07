@@ -2,6 +2,7 @@
   font-family: "Roboto", sans-serif;
 }
 
+/* popup card styles */
 .meal_items_details_card {
   background: linear-gradient(rgba(179, 82, 82, 0.88), rgba(79, 18, 18, 0.88));
   display: none;
@@ -69,6 +70,7 @@
   font-size: 14px;
 }
 
+/* video button styles */
 .meal_items_content_btn {
   display: flex;
   align-items: center;
@@ -98,6 +100,7 @@
   cursor: pointer;
 }
 
+/* close button styles */
 .meal_items_details_card i {
   font-size: 35px;
   margin-top: -15px;
@@ -110,6 +113,7 @@
   cursor: pointer;
 }
 
+/* media queries for responsivity */
 
 @media (max-width: 768px) {
   .meal_items_details_card {

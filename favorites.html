@@ -3,21 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="favorites.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="details.css" />
+     <!-- Font awesome cdn link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- All CSS file links -->
+ <link rel="stylesheet" href="style.css"> 
+ <link rel="stylesheet" href="favorites.css"> 
+ <link rel="stylesheet" href="details.css">
     <title>Meals App</title>
   </head>
   <body>
     <div class="overlay">
       <header>
+          <!-- navbar section -->
+
         <nav class="navbar">
           <div class="navbar_content">
             <div class="logo_content">
@@ -30,11 +31,12 @@
         </nav>
       </header>
 
+  <!-- main section where all favorite items displayed -->
       <section>
         <div class="fav_meal_main_content">
           <ul id="fav_meal_list">
-            <li>
-              <div class="fav_meal_items">
+            <!-- <li>
+                <div class="fav_meal_items">
                 <div class="fav_meal_items_img">
                   <img src="images/pizza.jpg" alt="pizza" />
                 </div>
@@ -45,10 +47,12 @@
                   <i id="fav_icon" class="fas fa-heart"></i>
                 </div>
               </div>
-            </li>
+            </li>-->
           </ul>
         </div>
       </section>
+
+        <!-- Details popup card -->
 
       <div class="card">
         <!-- <div class="meal_items_details_img">
