@@ -180,8 +180,10 @@ export const updateFavPageIconColor = () => {
     console.log(getFavoritesFromLocalStorage.length);
 
     favPageIcon.style.color = "rgba(210, 99, 99, 0.85)";
+    document.addEventListener("DOMContentLoaded", updateFavPageIconColor);
   } else {
     favPageIcon.style.color = "rgba(244, 230, 213,0.85)";
+    document.addEventListener("DOMContentLoaded", updateFavPageIconColor);
   }
 };
 
