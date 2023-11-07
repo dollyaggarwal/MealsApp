@@ -178,17 +178,14 @@ export const updateFavPageIconColor = () => {
   // Check if the favorite list is empty
   if (getFavoritesFromLocalStorage().length > 0) {
     console.log(getFavoritesFromLocalStorage.length);
-
     favPageIcon.style.color = "rgba(210, 99, 99, 0.85)";
-    document.addEventListener("DOMContentLoaded", updateFavPageIconColor);
   } else {
     favPageIcon.style.color = "rgba(244, 230, 213,0.85)";
-    document.addEventListener("DOMContentLoaded", updateFavPageIconColor);
   }
 };
 
 // Call the function to initially set the icon color
-(updateFavPageIconColor);
+document.addEventListener("DOMContentLoaded", updateFavPageIconColor);
 
 const loadFavPage = document.querySelector("#fav_page");
 
