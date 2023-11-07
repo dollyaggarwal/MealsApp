@@ -145,6 +145,7 @@ const fetchMealVideo = async (meal) => {
     console.error("Error fetching video URL: " + error);
   }
 };
+
 window.addEventListener("load", fetchRandomMeals);
 
 // Toggle favorite status for a meal
