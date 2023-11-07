@@ -180,11 +180,12 @@ function showCustomAlert(message, duration) {
   }, duration);
 }
 // Function to update the icon color based on the favorite list status
-export const updateFavPageIconColor = () => {
+export  const updateFavPageIconColor = () => {
   const favPageIcon = document.querySelector("#fav_page");
 
   // Check if the favorite list is empty
   if (getFavoritesFromLocalStorage().length > 0) {
+    
     
     favPageIcon.style.color = "rgba(210, 99, 99, 0.85)";
    
@@ -196,7 +197,7 @@ export const updateFavPageIconColor = () => {
 
 // Call the function to initially set the icon color
 
-window.addEventListener("load",updateFavPageIconColor);
+setTimeout(window.addEventListener("load",updateFavPageIconColor),1000);
 
 //load favorites.html page on clicking fav_page icon
 const loadFavPage = document.querySelector("#fav_page");
