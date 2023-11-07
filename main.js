@@ -177,7 +177,7 @@ export const updateFavPageIconColor = () => {
 
   // Check if the favorite list is empty
   if (getFavoritesFromLocalStorage().length > 0) {
-    console.log(getFavoritesFromLocalStorage.length);
+    
     favPageIcon.style.color = "rgba(210, 99, 99, 0.85)";
   } else {
     favPageIcon.style.color = "rgba(244, 230, 213,0.85)";
@@ -185,7 +185,7 @@ export const updateFavPageIconColor = () => {
 };
 
 // Call the function to initially set the icon color
-document.addEventListener("DOMContentLoaded", updateFavPageIconColor);
+(updateFavPageIconColor);
 
 const loadFavPage = document.querySelector("#fav_page");
 
