@@ -192,6 +192,11 @@ header .navbar_content{
       .nav_fav_heading h1 span{
         font-size: 32px;
         }
+        .fav_meal_main_content ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
     .fav_meal_main_content #fav_meal_list li{
         margin: auto;
     }
@@ -214,6 +219,11 @@ header .navbar_content{
       .nav_fav_heading h1 span{
         font-size: 28px;
         }
+        .fav_meal_main_content ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
     .fav_meal_main_content #fav_meal_list li{
         margin: auto;
     }
