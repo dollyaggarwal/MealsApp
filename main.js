@@ -201,3 +201,6 @@ submitMealButton.addEventListener("click", function (event) {
   const searchText = searchMealInput.value.trim();
   fetchMealsBySearch(searchText);
 });
+
+window.location.reload(true);
+
