@@ -47,7 +47,7 @@ header .navbar_content {
   align-items: center;
   width: 100px;
   height: 72px;
-  margin-left: 10px;
+  margin-left: 2px;
 }
 .navbar_content .logo_content img {
   width: 100%;
@@ -166,7 +166,7 @@ section .search_meal {
 }
 .meal_main_content #meal_list li {
   list-style: none;
-  margin-left: 35px;
+  margin-left: 30px;
   margin-right: 20px;
 }
 
@@ -270,6 +270,9 @@ section .search_meal {
        align-items: center;
        justify-content: center;
     }
+    .meal_main_content #meal_list li {
+      margin: auto;
+    }
     .search_meal .search_meal_input_search {
       width: 310px;
       height: 53px;
@@ -345,7 +348,9 @@ section .search_meal {
     align-items: center;
     justify-content: center;
  }
-
+ .meal_main_content #meal_list li {
+  margin: auto;
+}
   .meal_items_img img {
     width: 280px;
     height: 280px;

@@ -37,7 +37,7 @@ body{
 header .navbar_content{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background:linear-gradient( rgb(192, 84, 84) , rgb(70, 15, 15));
     box-shadow: 10px 10px 10px rgba(10, 3, 3, 0.8);   
 }
@@ -46,8 +46,8 @@ header .navbar_content{
     justify-content: center;
     align-items: center;
     width: 100px;
-    height: 72px;
-    margin-left: 10px;
+   height: 72px;
+   margin-left: 2px;
 }
 .navbar_content .logo_content img{
     width: 100%; 
@@ -186,7 +186,12 @@ header .navbar_content{
   /* media queries for responsivity */
 
   @media (max-width: 768px) {
-
+    .nav_fav_heading h1{
+        font-size: 32px;
+      }
+      .nav_fav_heading h1 span{
+        font-size: 32px;
+        }
     .fav_meal_main_content #fav_meal_list li{
         margin: auto;
     }
@@ -197,10 +202,18 @@ header .navbar_content{
   }
 
   @media (max-width: 480px) {
+    .navbar_content .logo_content {
+        width: 95px;
+       height: 68px;
+       margin-left: 2px;
+    }
     
     .nav_fav_heading h1{
-        font-size: 30px;
+        font-size: 28px;
       }
+      .nav_fav_heading h1 span{
+        font-size: 28px;
+        }
     .fav_meal_main_content #fav_meal_list li{
         margin: auto;
     }
