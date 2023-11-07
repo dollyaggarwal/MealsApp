@@ -186,7 +186,7 @@ export const updateFavPageIconColor = () => {
 };
 
 // Call the function to initially set the icon color
-updateFavPageIconColor();
+document.addEventListener("DOMContentLoaded", updateFavPageIconColor);
 
 const loadFavPage = document.querySelector("#fav_page");
 
